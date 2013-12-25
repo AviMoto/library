@@ -2,9 +2,11 @@ package com.admintheweb.library;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 	
@@ -34,6 +36,11 @@ public class MainActivity extends Activity {
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-    	
+    	ImageView boardPic = (ImageView) findViewById(R.id.boardPic);
+    	if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+    		Bundle extras = data.getExtras();
+    		Bitmap imageBitmap = (Bitmap) extras.get("data");
+    		boardPic.setImageBitmap(imageBitmap);
+    	}
     }
 }
