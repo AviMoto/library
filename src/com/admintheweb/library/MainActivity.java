@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity {
@@ -27,7 +28,7 @@ public class MainActivity extends Activity {
     }
     
     
-    private void takePictureIntent(){
+    public void dispatchTakePictureIntent(View view){
     	Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
     	if(takePictureIntent.resolveActivity(getPackageManager()) != null){
     		startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);

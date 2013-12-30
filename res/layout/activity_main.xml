@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/take_picture"
-        android:onClick="takePictureIntent" />
+        android:onClick="dispatchTakePictureIntent" />
 
 </LinearLayout>
