@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class NewNotebookActivity extends Activity {
 	
 	static final int REQUEST_IMAGE_CAPTURE = 1;
 
