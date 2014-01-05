@@ -2,14 +2,11 @@ package com.admintheweb.library;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
-import android.view.View;
-import android.widget.ImageView;
 
-public class MainActivity extends Activity {
+public class NewNotebookActivity extends Activity {
 	
 	static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -28,7 +25,7 @@ public class MainActivity extends Activity {
     }
     
     
-    public void dispatchTakePictureIntent(View view){
+    private void takePictureIntent(){
     	Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
     	if(takePictureIntent.resolveActivity(getPackageManager()) != null){
     		startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
@@ -37,11 +34,6 @@ public class MainActivity extends Activity {
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-    	ImageView boardPic = (ImageView) findViewById(R.id.boardPic);
-    	if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
-    		Bundle extras = data.getExtras();
-    		Bitmap imageBitmap = (Bitmap) extras.get("data");
-    		boardPic.setImageBitmap(imageBitmap);
-    	}
+    	
     }
 }
