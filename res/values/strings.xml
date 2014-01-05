@@ -9,5 +9,6 @@
     <string name="my_notebooks">My NoteBooks</string>
     <string name="new_notebook">New NoteBook</string>
     <string name="title_activity_new_notebook">New NoteBook</string>
+    <string name="title_activity_my_notebooks">MyNotebooks</string>
 
 </resources>
